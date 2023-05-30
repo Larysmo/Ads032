@@ -1,10 +1,20 @@
 import { useForm } from 'react-hook-form';
+import { useContext } from 'react'
+import { ContatosContext } from '../context/ContatosContext';
+import { useNavigate } from 'react-router-dom'
 
 
 export default function Novo(){
+
+    const {incluirContato} = useContext(ContatosContext)
+    const navigate = useNavigate()
     const {register, handleSubmit, formState:{errors}} = useForm()
 
-	function onSubmit(data){}
+	function onSubmit(data){
+        incluirContato(data)
+        navigate('/')
+
+    }
     
     return(
         <>

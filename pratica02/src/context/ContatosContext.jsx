@@ -1,7 +1,7 @@
 import { createContext } from 'react'
 import { useState} from 'react'
 
-const ContatosContext = createContext({ 
+export const ContatosContext = createContext({ 
     meusContatos: [ ],
     incluirContato: () => { },
     })
@@ -9,7 +9,7 @@ const ContatosContext = createContext({
   
 const ContatosContextProvider = (props) => {
     
-    const [contatos, setContatos] = useState({})
+    const [contatos, setContatos] = useState([])
     function incluir(contato){
         setContatos([...contatos, contato])
     }
@@ -27,7 +27,8 @@ const ContatosContextProvider = (props) => {
 
     )}
 
-    export function ContatosContextProvider()
-    export default ContatosContext
+    export {ContatosContextProvider}
+
+
 
     
